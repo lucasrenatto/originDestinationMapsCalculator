@@ -1,34 +1,34 @@
 import pandas as pd
 import googlemaps
 
-# Chave da API do Google Maps
-chave_api = 'SUA CHAVE GOOGLE'
-gmaps = googlemaps.Client(key=chave_api)
+# Google Maps API Key
+api_key = 'YOUR GOOGLE KEY'
+gmaps = googlemaps.Client(key=api_key)
 
-caminho_arquivo = 'caminhoDoSeuArquivo.xlsx'
-dados = pd.read_excel(caminho_arquivo)
+file_path = 'yourFilePath.xlsx'
+data = pd.read_excel(file_path)
 
 
-def calcular_distancia_tempo(origem, destino):
+def calculate_distance_time(origin, destination):
     try:
-        resultado = gmaps.distance_matrix(origem, destino, mode='driving')
-        distancia = resultado['rows'][0]['elements'][0]['distance']['text']
-        duracao = resultado['rows'][0]['elements'][0]['duration']['text']
-        return distancia, duracao
+        result = gmaps.distance_matrix(origin, destination, mode='driving')
+        distance = result['rows'][0]['elements'][0]['distance']['text']
+        duration = result['rows'][0]['elements'][0]['duration']['text']
+        return distance, duration
     except Exception as e:
-        print(f"Erro ao calcular a distância para {origem}: {e}")
+        print(f"Error calculating distance for {origin}: {e}")
         return None, None
 
-for index, row in dados.iterrows():
-    origem = f"{row['Cidade']}, {row['UF']}"
-    destino = row['Endereço']
-    distancia, duracao = calcular_distancia_tempo(origem, destino)
+for index, row in data.iterrows():
+    origin = f"{row['City']}, {row['State']}"
+    destination = row['Address']
+    distance, duration = calculate_distance_time(origin, destination)
     
-    dados.at[index, 'Distância'] = distancia
-    dados.at[index, 'Tempo'] = duracao
+    data.at[index, 'Distance'] = distance
+    data.at[index, 'Time'] = duration
 
 
-novo_caminho_arquivo = 'resultado.xlsx'
-dados.to_excel(novo_caminho_arquivo, index=False)
+new_file_path = 'result.xlsx'
+data.to_excel(new_file_path, index=False)
 
-print(f"Arquivo gerado com sucesso: {novo_caminho_arquivo}")
+print(f"File successfully generated: {new_file_path}")
