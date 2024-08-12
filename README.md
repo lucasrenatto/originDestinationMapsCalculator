@@ -4,9 +4,51 @@ This tool is useful for automating distance calculations in logistics projects, 
 
 Example XLSX:
 
-City	            State	Address	              Distance	            Time
-New York	NY	    350 5th Ave, New York		
-Los Angeles	CA	  200 Santa Monica Blvd		
-Chicago	IL	      233 S Wacker Dr		
-Houston	TX	      1600 Smith St		
-Miami	FL	        1101 Brickell Ave		
+<table border="1">
+    <thead>
+        <tr>
+            <th>City</th>
+            <th>State</th>
+            <th>Address</th>
+            <th>Distance</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>New York</td>
+            <td>NY</td>
+            <td>350 5th Ave, New York</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Los Angeles</td>
+            <td>CA</td>
+            <td>200 Santa Monica Blvd</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Chicago</td>
+            <td>IL</td>
+            <td>233 S Wacker Dr</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Houston</td>
+            <td>TX</td>
+            <td>1600 Smith St</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Miami</td>
+            <td>FL</td>
+            <td>1101 Brickell Ave</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
